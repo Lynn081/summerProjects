@@ -1,0 +1,434 @@
+<html>
+<head>
+<meta name="generator"
+  content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+  <meta charset="UTF-8" />
+ <link href="font-awesome-4.5.0/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" >
+  <title></title>  
+<style type="text/css">
+html,body{
+	padding:0;
+	margin: 0;  //解决了底部footer跟浏览器的间隙问题
+}
+ *{
+ 	 box-sizing: border-box;
+ }
+ *:hover{
+ 	box-sizing: border-box;
+ }
+body{
+	overflow-x:hidden;
+}
+ a{
+	text-decoration: none;
+	color:#272822;
+ }
+ a:hover{
+ 	color: #fff;
+ }
+ ul{
+ 	list-style-type: none;
+ 	margin-left: 780px;
+ }
+ li{
+ 	display: inline;
+ 	margin-left: 30px;
+ }
+ h1{
+ 	font-size: 60px;
+ 	color: #B8B7B6;
+ 	line-height: 1.1;
+ }
+ h2{
+ 	font-size: 40px;
+ }
+ h3{
+ 	font-size: 30px;
+ }
+ .text-center{
+ 	text-align: center;
+ }
+ .font-style{
+ 	font-family: Georgia;
+ 	margin-top: 120px;
+ }
+ .header-nav{
+ 	position:fixed;
+ 	z-index:1000;//以上两句共同解决导航栏不随滚动条滚动,并且滑动的div从导航栏后面滑上去
+ 	float: left;
+ 	top: 0;
+ 	left: 0;
+ 	background-color:#8A8A88;
+ 	width: 100%;		
+ }
+ .nav-brand{
+ 	margin-left: 30px;
+ 	float: left;
+ 	
+ } 
+ .nav-li-style{
+ 	font-size: 19px;
+ 	font-family: Georgia;
+ 	text-align: center;
+ 	color: #000;
+ }
+ .bg-img{
+ 	position:fixed;
+ 	float: left;
+    background:url("http://7xtsii.com1.z0.glb.clouddn.com/2.jpg");
+    width:100%;
+    height: 90%;
+    margin-top: 50px;
+    left: 0;
+    top: 0;
+ }
+ #container{
+ 	width: 1400px;
+ 	height: 3500px;
+ 	position: relative;
+ 	float: left;
+ }
+ .container-block{ //五个div
+ 	width: 80%;
+ 	height: 800px;
+ 	margin-left: 110px;
+ 	margin-right: 80px;	
+ }
+ .home-style{ //第一个
+ 	margin-top: 60px;
+ 	padding-top: 68px;
+ }
+ .home-intro-divider{
+ 	border-top: 1px solid #f8f8f8;
+ 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+ }
+ .about-style{
+ 	position: relative;
+   
+ }
+  .about-introduce{
+ 	position: absolute;
+ 	width: 400px;
+ 	height: 200px;
+ 	margin-left: 30px;
+ 	font-family: Georgia;
+
+ }
+ .about-introduce-seay{
+ 	font-size: 25px;
+ }
+ .about-people-img{
+ 	position: absolute;
+ 	top: 200px;
+ 	right: 90px;
+ 	width: 400px;
+ 	height: 300px;
+ 	
+ }
+ .about-smaller-img{
+   
+ 	width: 280px;
+ 	height: 280px;
+ 	border-radius: 50%;
+ 	
+ }
+ .portfolio-style{
+ }
+ .portfolio-title{
+ 	position: relative;
+ 	width: 1000px;
+ 	height:200px;
+ }
+ .portfolio-block{
+ 	position: relative;
+ 	float: left;
+ 	width: 310px;
+ 	height: 280px;
+ 	background-color: #DADFE1;
+ 	margin:20px 20px 20px 40px;
+ 	transition: all 0.6s;
+ 	outline: #A19FAC inset 10px;
+ 	text-align: center;	
+ }
+.portfolio-block:hover{
+ 	box-shadow:30px 30px 30px rgba(0, 0, 0, 0.9);//标记	 
+ }
+ .portfolio-hover{
+ 	    position: absolute;
+ 		width: 300px;
+ 		height: 180px;
+ 		transition: all 0.6s;
+ 	
+ }
+  .portfolio-hover:hover{
+   background:rgba(0, 0, 0, 0.7)none repeat scroll 0 0;
+   transition: all 0.6s;//缓慢延伸
+ }
+ .portfolio-hover-incon{
+ 	position: absolute;
+ 	width: 300px;
+ 	height: 30px;
+ 	text-align: center;
+ 	margin-top: 40px;
+    
+ }
+ .portfolio-small-img{
+ 	width: 280px;
+ 	height: 150px;
+ 	margin-left: 10px;
+ }
+ .portfolio-apply-title{
+ 	background-color:#1C1D1F; 
+ 	position: absolute;
+ 	width: 300px;
+ 	height: 90px;
+ 	margin-top: 30px;
+ 	text-align: center;
+ 	color: white;
+ }
+.portfolio-apply-title.h4{
+	font-size: 25px;
+}
+ .contact-style{
+ 	
+ 	
+ 	padding-top: 50px;
+ }
+ .contact-tip{
+ 	position: relative;
+ 	float: left;
+ 	width: 600px;
+ 	margin-top: 130px;
+
+ }
+ .contact-ways{
+ 	position: relative;
+ 	float: right;
+ 	top:40px;
+ 	width: 350px;
+ 	height: 600px;
+ }
+ .ul-position{
+ 	position: relative;
+ 	float: right;
+ 	margin-right: 100px;
+ 	margin-top: 130px;
+ }
+ .home-btn-style{
+ 	margin-left: 180px;
+ }
+ .btn-style{	
+ 	background-color: #C0C0C0;
+ 	border:2px outset #000;
+ 	font-size: 20px;
+ 	border-radius: 4px;
+ 	box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5);//标记
+ 	display:inline-block;
+ 	padding:10px 16px;
+ 	margin: 6px;
+ 	transition: all 0.21s;
+ 	letter-spacing: 2px;	
+ }
+
+ .btn-style:hover{
+ 	background:rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
+ 	border:2px outset rgba(0, 0, 0, 0.9);
+ 	letter-spacing: 2px;
+ 	transform: scale(1.11);//放大
+ 	transition: all 0.21s;//缓慢延伸
+ }
+ .portfolio-font{
+   font-family: Georgia;
+   font-size: 50px;
+ }
+ .contact-font{
+ 	font-family: Cursive;
+ }
+ .home-btn{
+ 	float: left;
+ }
+ .contact-btn{
+ 	margin-left: 0;
+ 	float: right;
+ }
+ .btn-position{
+ 	position: relative;
+ 	margin-top: 20px;
+ 	margin-left: 30px;
+ } 
+ .bottom-nav{
+ 	width: 1349px;
+ 	height: 220px;
+ 	padding: 0;
+ 	margin: 0;
+ }
+ .bottom-nav-ul{ 
+ 	background-color: #C6C6C6;
+ 	position: relative;
+ 	float: left;
+ 	width: 100%;
+ 	height: 120px;
+ 	margin-top: 20px;
+ 	padding-top: 20px;
+   
+ }
+.bottom-nav-li{
+	width: 100%;
+	color:  #6E7AB7;
+}
+.bottom-tip{
+ 	position: absolute;
+ 	margin-top: 60px;
+ 	margin-left: 90px;
+ 	color: #7B7777;
+ }
+</style>
+</head>
+ <body> 
+  <div class="header-nav"> 
+   <nav> 
+    <a href="http://virtual-dawn.com/index_english.html" class="nav-brand nav-li-style"> Thiago Ferreira</a> 
+    <ul> 
+     <li><a href="#home" class="nav-li-style">Home</a></li> 
+     <li><a href="#about" class="nav-li-style">About</a></li> 
+     <li><a href="#portfolio" class="nav-li-style">Portfolio</a></li> 
+     <li><a href="#contact" class="nav-li-style">Contact</a></li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <div class="bg-img">
+  </div>
+  <a name="home"></a> 
+  <div id="container"> 
+   <div class="home-style container-block"> 
+    <h1 class="text-center font-style">Infinito Web Design Studio</h1> 
+    <h3 class="text-center">Where Awesomeness Is Brought To Life.</h3> 
+    <hr class="home-intro-divider" /> 
+    <div class="home-btn-style"> 
+     <a href="https://twitter.com/Ferreir4Thiago" target="blank" class="btn-position home-btn btn-style "><i class="fa fa-twitter fa-fw"></i><span class="network-name"><strong>Twitter</strong></span></a> 
+     <a href="https://github.com/Lynn081" target="blank" class="btn-position home-btn btn-style"><i class="fa fa-github fa-fw"></i><span class="network-name"><strong>Github</strong></span></a> 
+     <a href="https://www.linkedin.com/profile/guided?dl=no&amp;trk=uno-choose-ge-no-intent" target="blank" class="btn-position home-btn btn-style "><i class="fa fa-linkedin fa-fw"></i><span class="network-name "><strong>Linkedin</strong></span></a> 
+     <a href="https://www.freecodecamp.cn/lynn081" target="blank" class="btn-position home-btn freecode-btn btn-style"><i class="fa fa-fire fa-fw"></i><span class="network-name"><strong>freeCodeCamp</strong></span></a> 
+    </div> 
+   </div> 
+   <a name="about"></a> 
+   <div class="about-style container-block"> 
+    <div class="about-introduce"> 
+     <h2>Infinito Web Design Studio</h2> 
+     <p class="about-introduce-seay">My name is Lynn！I'm a self taught web designer, developer, co-founder and entrepreneur based in Finland. I'm currently part of a small web development team in an upcoming start-up, building web and mobile applications. My passion is to use technology based solutions, to help solve real world challenges. Competences: Languages and Frameworks: Javascript, HTML5, CSS3, jQuery, Bootstrap3, Angular.js, Meteor.js. Tools &amp; expertise: Git, Responsive Web Design, Agile Methodologies.</p> 
+    </div> 
+    <div class="about-people-img"> 
+     <img class="about-smaller-img" src="me.jpg" /> 
+    </div> 
+   </div> 
+   <a name="portfolio"></a> 
+   <div class="portfolio-style container-block"> 
+    <div class="portfolio-title"> 
+     <h2 class="text-center portfolio-font">Awesomeness Portfolio</h2> 
+     <h3 class="text-center">Below you'll find some of my recent work.</h3>
+    </div> 
+    <div class="portfolio-block"> 
+     <a href="应用1"> 
+      <div class="portfolio-hover"> 
+       <div class="portfolio-hover-incon"> 
+        <i class="fa fa-fire fa-3x"></i> 
+       </div> 
+      </div> <img class="portfolio-small-img" src="a.jpg" /> </a> 
+     <div class="portfolio-apply-title"> 
+      <h4>My 1st apply</h4> 
+      <p>css and JavaScript</p> 
+     </div> 
+    </div> 
+    <div class="portfolio-block"> 
+     <a href="应用2"> 
+      <div class="portfolio-hover"> 
+       <div class="portfolio-hover-incon"> 
+        <i class="fa fa-fire fa-3x"></i> 
+       </div> 
+      </div> <img class="portfolio-small-img" src="b.jpg" /> </a> 
+     <div class="portfolio-apply-title"> 
+      <h4>My 1st apply</h4> 
+      <p>css and JavaScript</p> 
+     </div> 
+    </div> 
+    <div class="portfolio-block"> 
+     <a href="应用3"> 
+      <div class="portfolio-hover"> 
+       <div class="portfolio-hover-incon"> 
+        <i class="fa fa-fire fa-3x"></i> 
+       </div> 
+      </div> <img class="portfolio-small-img" src="c.jpg" /> </a> 
+     <div class="portfolio-apply-title"> 
+      <h4>My 1st apply</h4> 
+      <p>css and JavaScript</p> 
+     </div> 
+    </div> 
+    <div class="portfolio-block"> 
+     <a href="应用4"> 
+      <div class="portfolio-hover"> 
+       <div class="portfolio-hover-incon"> 
+        <i class="fa fa-fire fa-3x"></i> 
+       </div> 
+      </div> <img class="portfolio-small-img" src="d.jpg" /> </a> 
+     <div class="portfolio-apply-title"> 
+      <h4>My 1st apply</h4> 
+      <p>css and JavaScript</p> 
+     </div> 
+    </div> 
+    <div class="portfolio-block"> 
+     <a href="应用5"> 
+      <div class="portfolio-hover"> 
+       <div class="portfolio-hover-incon"> 
+        <i class="fa fa-fire fa-3x"></i> 
+       </div> 
+      </div> <img class="portfolio-small-img" src="e.jpg" /> </a> 
+     <div class="portfolio-apply-title"> 
+      <h4>My 1st apply</h4> 
+      <p>css and JavaScript</p> 
+     </div> 
+    </div> 
+    <div class="portfolio-block"> 
+     <a href="应用6"> 
+      <div class="portfolio-hover"> 
+       <div class="portfolio-hover-incon"> 
+        <i class="fa fa-fire fa-3x"></i> 
+       </div> 
+      </div> <img class="portfolio-small-img" src="f.jpg" /> </a> 
+     <div class="portfolio-apply-title"> 
+      <h4>My 1st apply</h4> 
+      <p>css and JavaScript</p> 
+     </div> 
+    </div> 
+   </div> 
+   <a name="contact"></a> 
+   <div class="contact-style container-block"> 
+    <div class="contact-tip"> 
+     <h3 class="contact-font">Connect with Infinito Web Design Studio:<br /> 1090023975@qq.com</h3> 
+    </div> 
+    <div class="contact-ways"> 
+     <ul class="ul-position"> 
+      <li><a href="https://twitter.com/Ferreir4Thiago" target="blank" class="btn-position home-btn btn-style "><i class="fa fa-twitter fa-fw"></i><span class="network-name"><strong>Twitter</strong></span></a></li> 
+      <li><a href="https://github.com/Lynn081" target="blank" class="btn-position home-btn btn-style"><i class="fa fa-github fa-fw"></i><span class="network-name"><strong>Github</strong></span></a></li> 
+      <li><a href="https://www.linkedin.com/profile/guided?dl=no&amp;trk=uno-choose-ge-no-intent" target="blank" class="btn-position home-btn btn-style "><i class="fa fa-linkedin fa-fw"></i><span class="network-name "><strong>Linkedin</strong></span></a></li> 
+      <li><a href="https://www.freecodecamp.cn/lynn081" target="blank" class="btn-position home-btn freecode-btn btn-style"><i class="fa fa-fire fa-fw"></i><span class="network-name"><strong>freeCodeCamp</strong></span></a></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <footer class="bottom-nav"> 
+   <div class="bottom-nav-ul"> 
+    <ul class="nav-brand"> 
+     <li><a href="#home"><span class="bottom-nav-li"><strong>Home</strong></span></a></li> 
+     <li><a>.</a></li> 
+     <li><a href="#about"><span class="bottom-nav-li"><strong>About</strong></span></a></li> 
+     <li><a>.</a></li> 
+     <li><a href="#portfolio"><span class="bottom-nav-li"><strong>Portfolio</strong></span></a></li> 
+     <li><a>.</a></li> 
+     <li><a href="#contact"><span class="bottom-nav-li"><strong>Contact</strong></span></a></li> 
+    </ul> 
+    <p class="bottom-tip">Copyright &copy; Infinito Web Design Studio 2015. All Rights Reserved</p> 
+   </div> 
+  </footer> 
+ </body>
+
+</html>

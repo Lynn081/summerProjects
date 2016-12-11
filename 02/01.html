@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+  
+  <head>
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="UTF-8" />
+    <title>九宫格</title>
+    <style type="text/css">#square{ position:relative; margin: 80px 450px; height: 316px; width: 316px; background-color: #87A2B5; } #square div{ float: left; position:relative; background-color: white; border: 2px; border-radius: 2px; height: 100px; width: 100px; margin-top: 4px; margin-left:4px; } .img{ position:relative; float:left; }</style></head>
+  
+  <body bgcolor="#D7D1D1" onmousedown="draw(event)" onload="setchess()">
+  <script type = "text/javascript" >
+var a = 1,
+b = 0,
+c, temp;
+var array = new Array();
+function draw(e) {
+    var f, c;
+    f = change();
+    if (f == 'circle') {
+        e.srcElement.innerHTML = '<img src="' + f + '.gif"/>';
+        c = 1;
+        setflagc(e, c);
+    } else {
+
+        e.srcElement.innerHTML = '<img src="' + f + '.gif"/>';
+        c = 0;
+        setflagc(e, c);
+
+    }
+
+    whowin();
+}
+
+function whowin() {
+
+    var l = dfs();
+    if (l == "circle") {
+        alert("o win!!");
+
+    } else if (l == "false") {
+        alert("X win!!!");
+
+    }
+
+}
+function getMousePosX(event) {
+
+    var e, x;
+    e = event || window.event;
+    x = e.clientX;
+    return x;
+}
+
+function getMousePosY(event) {
+
+    var e, y;
+    e = event || window.event;
+    y = e.clientY;
+    return y;
+}
+
+// 画叉	
+function drawfalse() {
+
+    temp = 'false';
+    return temp;
+}
+
+//画圆
+function drawcircle() {
+
+    temp = 'circle';
+
+    return temp;
+
+}
+
+//交替画图
+function change() {
+
+    var figure;
+    if (a > 0) {
+        a--;
+        figure = drawcircle();
+        b++;
+
+    } else if (b > 0) {
+        b--;
+        figure = drawfalse();
+        a++;
+    }
+    return figure;
+}
+
+//建立九宫格数组
+function setchess() {
+
+    for (var i = 0; i < 3; i++) {
+        array[i] = new Array();
+        for (var j = 0; j < 3; j++) {
+            array[i][j] = 0;
+        }
+    }
+}
+
+//遍历数组
+function dfs() {
+    var countc = 0,
+    countf = 0,
+    k = 2;
+    //横向
+    for (var m = 0; m < 3; m++) {
+        countc = 0;
+        countf = 0;
+        for (var n = 0; n < 3; n++) {
+            if (array[m][n] == 1) {
+                countc++;
+                if (countc == 3) return "circle";
+            } else if (array[m][n] == 2) {
+                countf++;
+                if (countf == 3) return "false";
+            }
+
+        }
+    }
+
+    //竖向
+    for (var m = 0; m < 3; m++) {
+        countc = 0;
+        countf = 0;
+        for (var n = 0; n < 3; n++) {
+
+            if (array[n][m] == 1) {
+                countc++;
+                if (countc == 3) return "circle";
+            } else if (array[n][m] == 2) {
+                countf++;
+                if (countf == 3) return "false";
+            }
+        }
+    }
+    //斜向
+    for (var m = 0; m < 3; m++) {
+        if (array[m][m] == 1) {
+            countc++;    
+            if (countc == 3) return "circle";
+        } else if (array[m][m] == 2) {
+            countf++;
+            if (countf == 3) return "false";
+        }
+    }
+    for (var m = 0; m < 3; m++) {
+        if (array[m][k - m] == 1) {
+            counc++;
+            if (countc == 3) return "circle";
+        } else if (array[m][k - m] == 2) {
+            countf++;
+            if (countf == 3) return "false";
+        }
+    }
+    return "q";
+}
+
+//标记div放的图形
+function setflagc(e, c) {
+    var X, Y;
+    X = getMousePosX(e);
+    Y = getMousePosY(e);
+    if (X > 463 && X < 569 && Y > 86 && Y < 189) {
+        array[0][0] = (c == 1) ? 1 : 2;
+    }
+    else if (X > 569 && X < 673 && Y > 86 && Y < 189) {
+        array[0][1] = (c == 1) ? 1 : 2;
+
+    }
+    else if (X > 673 && X < 768 && Y > 86 && Y < 189) {
+        array[0][2] = (c == 1) ? 1 : 2;
+        // alert("array[0][2]:"+array[0][2]);
+    }
+    else if (X > 463 && X < 569 && Y > 189 && Y < 295) {
+        array[1][0] = (c == 1) ? 1 : 2;
+
+    }
+    else if (X > 569 && X < 673 && Y > 189 && Y < 295) {
+        array[1][1] = (c == 1) ? 1 : 2;
+
+    }
+    else if (X > 673 && X < 768 && Y > 189 && Y < 295) {
+        array[1][2] = (c == 1) ? 1 : 2;
+
+    }
+    else if (X > 463 && X < 569 && Y > 295 && Y < 390) {
+        array[2][0] = (c == 1) ? 1 : 2;
+
+    }
+    else if (X > 569 && X < 673 && Y > 295 && Y < 390) {
+        array[2][1] = (c == 1) ? 1 : 2;
+
+    }
+    else if (X > 673 && X < 768 && Y > 295 && Y < 390) {
+        array[2][2] = (c == 1) ? 1 : 2;
+
+    } else return false;
+    return true;
+}
+</script>
+    <div id="square">
+      <div ></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+
+</html>
